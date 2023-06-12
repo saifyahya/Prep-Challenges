@@ -276,9 +276,9 @@ let data = {
 
 const classesAvg = (data) => {
     let sum=0;
-for(let i=0 ; i < grades.length ; i++ ) {           //iterate over the grades array of objects
-    for (let j = 0 ;j< data.grades[i].numberOfClasses;j++){ //iterate over each class in the grade
-        for(let n =0 ; n<data.grades[i].classes[j].classScores.length;n++) { //iterate over the array scores in each class of grades
+for(let i =0 ;i<data.grades.length;i++ ) {           //iterate over the grades array of objects
+    for (let j=0 ;j< data.grades[i].classes.length;j++ ){ //iterate over each class in the grade
+        for(let n =0; n< data.grades[i].classes[j].classScores.length;n++) { //iterate over the array scores in each class of grades
             sum+=data.grades[i].classes[j].classScores[n];
         }
         data.grades[i].classes[j].avg=Math.floor(sum/data.grades[i].classes[j].classScores.length);
