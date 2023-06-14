@@ -20,8 +20,10 @@
 
 const arrInc = (arr) => {
     let result = [];
-for( let i of arr)
-result.push(arr[i]+=10)    
+arr.forEach((i) => {
+    result.push(i+10)
+});
+
 return result;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -39,8 +41,12 @@ return result;
 //  [5, 6, 7, 7]
 // 
 const roundDecimals = (arr) => {
-for(let i of arr)
-Math.round(arr[i])
+    let result=[]
+   arr.forEach((i)=>{
+    result.push(Math.round(i))
+   })
+   return result;
+}
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -108,17 +114,14 @@ Math.round(arr[i])
 //
 
 const employeesBonus = (arr) => {
-for(let i = 0 ; i < arr.length ; i++){
-    if( arr[i].section=="Production" && arr[i].workHours>8)
-    arr[i].salary=(parseInt(arr[i].salary)+100)+"$";
-    if( arr[i].section=="Production" && arr[i].workHours<8)
-        arr[i].salary=(parseInt(arr[i].salary)+50)+"$";
+arr.forEach((i)=>{
+    if(i.workHours>8)
+    i.salary=(parseInt(i.salary)+100)+"$";
+    else
+    i.salary=(parseInt(i.salary)+50)+"$";
+})
+return arr;
 }
-return arr;}
-
-    // write your code here
-
-
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -137,15 +140,7 @@ return arr;}
 // Output: 200
 
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
-for (let i = 0 ; i < mouseArray.length;i++){
-    for (let j = 0 ; i < keyBoardArray.length;j++){
-        if(mouseArray[i]+keyBoardArray[j]==budget)
-        return budget;
-
-}}
-
-
-
+    // write your code here
 }
 // -------------------------------------------------------------------------------------------------------
 
