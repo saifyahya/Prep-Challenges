@@ -207,8 +207,24 @@ function gradesAvg(arr) {
 // ]
 
 function studentsResult(arr) {
-    // write your code here
-}
+    let result;
+    return arr.map((element) => {
+        if(element.avg>=50)
+        result="passed"
+        else
+        result="failed"
+
+        return {
+            firstName: element.firstName,
+                 lastName: element.lastName,
+             			gradsList: element.gradsList,
+                  avg: element.avg,
+                  result: result
+             	}
+        })
+
+    }
+
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
