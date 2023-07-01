@@ -101,10 +101,17 @@ const stringReverse = (str) => {
 //     Bailey: 2
 // };
 //
-
 const statistics = (obj) => {
-    // write your code here
-}
+    return obj.reduce((acc, current) => {
+      const x = current["votes_To"]; 
+      if (acc[x]) {
+        acc[x] += 1;
+      } else {
+        acc[x] = 1;
+      }
+      return acc;
+    },{});
+  };
 // -------------------------------------------------------------------------------------------------------
 
 

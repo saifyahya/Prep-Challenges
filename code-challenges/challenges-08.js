@@ -132,8 +132,23 @@ for ( let i=0 ; i<arr.length; i++) {
 // ]
 
 const getStudents = (arr) => {
-  // write your code here
+  let myarr=[];
+  let obj ={
+    student:"any",
+    course:"any"
+  }
+for(let studentgiven of arr) {
+  for ( let i=0 ; i<courses.length; i++) {
+    for (let studentlist of courses[i].Students){
+      if(studentlist==studentgiven)
+      obj.student=studentgiven
+      obj.course=courses[i].course
+    }
+}
+myarr.push(obj)
 };
+return
+}
 //  ------------------------------------------------------------------------------------------------------
 
 module.exports = {

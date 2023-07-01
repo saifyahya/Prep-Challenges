@@ -71,21 +71,21 @@ const oddFiltration = (arr) => { return arr.filter(x=> x%2 !=0)
 //  2- If one of the names is null dont add it to the full name
 
 const cvsFiltration = (arr) => {
-    let myrray=[];
-  arr.filter(x => {
-     if(x.tech=="JS" && x.yearsOfExperience>4){
-     if (x.LastName==null)
-     myrray.push({
-         fullName:x.firstName,
-         tech:x.tech
-         })
-     else
-     myrray.push(
-         { fullName:x.firstName+" "+x.LastName,
-     tech:x.tech
-     } )
- }})
- return myrray}
+  let myarr=[]
+    arr.filter(x => {
+      if(x.tech=="JS" && x.yearsOfExperience>4){
+        if (x.LastName==null)
+        myarr.push({
+          fullName:x.firstName,
+          tech:x.tech
+        })
+        else
+        myarr.push( {
+          fullName:x.firstName+" "+x.LastName,
+          tech:x.tech
+        })
+    }})
+  return myarr}
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -100,19 +100,17 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     const vowels = ['a', 'e', 'i', 'o', 'u'];
-  
+
     return arr.filter((word) => {
-      let hasVowel = false;
-  
-      for (let j = 0; j < word.length; j++) {
-        if (vowels.includes(word.charAt(j))) {
-          hasVowel = true;
-          break;
-        }
+      let zeroVowels=0;
+      for (let j = 0; j < vowels.length; j++) {
+        if (word.includes(vowels[j])) 
+    zeroVowels++        
+
       }
-  
-      return !hasVowel;
-    });
+      if(zeroVowels==0)
+      return true}
+      ); 
   };
 
 // -------------------------------------------------------------------------------------------------------
@@ -135,8 +133,15 @@ const vowelsFiltration = (arr) => {
 // - the 'include' method can help you, read about it.
 
 const skillComparison = (arr1, arr2) => {
-    // write your code here
-}
+  let arr3= arr1.concat(arr2);
+  let result =[];
+     arr3.filter(ele => {
+      if(result.includes(ele)==false)
+      result.push(ele)
+     })
+    return result
+    
+  }
 // -------------------------------------------------------------------------------------------------------
 
 

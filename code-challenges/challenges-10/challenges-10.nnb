@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function migratoryBirds(arr) {\n    let birds = {}\n    \n    arr.forEach(ele => {\n        if (!birds[ele])\n        birds[ele]=1\n        else\n        birds[ele]++\n    })\n    let total =0,id=999;\n    for (let key in birds) {\n        if (birds[key]>total){\n        total = birds[key]\n        id=key\n    }\n    else if(birds[key]==total) {\n        if(key<id)\n        id=key\n    }}\n    return id;\n    }"
             ],
             "outputs": []
         }
