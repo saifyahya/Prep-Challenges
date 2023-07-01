@@ -140,7 +140,15 @@ return arr;
 // Output: 200
 
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
-    // write your code here
+    let budg=parseInt(budget);
+    let total=0;
+    for(let i = 0 ; i<mouseArray.length;i++) {
+        for(let j = 0 ; j<keyBoardArray.length;j++) {
+            let x = mouseArray[i]+keyBoardArray[j] 
+            total = x<=budg && x>total ?x : total;
+        }
+    }
+    return total;
 }
 // -------------------------------------------------------------------------------------------------------
 

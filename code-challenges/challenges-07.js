@@ -87,12 +87,11 @@ const objLat = (obj) => {
 const cvFormatter = (arr) => {
     let myArray=[]
     for (let i =0 ; i< arr.length;i++) {
-        if(arr[i].yearsOfExperience>1 ){
-        if(arr[i].lastName!=null)
+        if(arr[i].yearsOfExperience>1 && arr[i].lastName!=null)
         myArray.push({fullName:arr[i].firstName+" "+arr[i].lastName,tech:arr[i].tech})
-        if(arr[i].lastName==null)
+        if(arr[i].yearsOfExperience>1 && arr[i].lastName==null)
         myArray.push({fullName:arr[i].firstName,tech:arr[i].tech})
-    }}
+    }
     return myArray
 };
 // -------------------------------------------------------------------------------------------------------
